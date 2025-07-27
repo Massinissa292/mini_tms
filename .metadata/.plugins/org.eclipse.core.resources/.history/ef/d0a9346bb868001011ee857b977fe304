@@ -1,0 +1,5 @@
+package mini_tms.repository;
+
+public interface VehiculeRepository {
+
+}

@@ -1,0 +1,54 @@
+package mini_tms;
+
+
+import jakarta.persistence.*;
+
+@Entity
+public class Vehicule {
+
+    public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getMatricule() {
+		return matricule;
+	}
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
+	}
+	public String getModele() {
+		return modele;
+	}
+	public void setModele(String modele) {
+		this.modele = modele;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public int getCapacite() {
+		return capacite;
+	}
+	public void setCapacite(int capacite) {
+		this.capacite = capacite;
+	}
+	public String getStatut() {
+		return statut;
+	}
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String matricule;
+    private String modele;
+    private String type;
+    private int capacite;
+    private String statut; 
+}

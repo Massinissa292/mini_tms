@@ -1,0 +1,24 @@
+package mini_tms.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import mini_tms.model.Conducteur;
+import mini_tms.repository.ConducteurRepository;
+
+@Service
+public class ConducteurService {
+    private final ConducteurRepository repository;
+
+    public ConducteurService(ConducteurRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<Conducteur> getAll() {
+        return repository.findAll();
+    }
+    public Conducteur getConducteurbyId(long id) {
+    	return repository.getById(id);
+    }
+}

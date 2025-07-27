@@ -1,0 +1,26 @@
+package mini_tms.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import mini_tms.model.Trajet;
+import mini_tms.repository.TrajetRepository;
+
+
+@Service
+public class TrajetService {
+    private final TrajetRepository rep;
+
+    public TrajetService(TrajetRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<Trajet> getAll() {
+        return repository.;
+    }
+    public Trajet getConducteurbyId(long id) {
+    	return repository.getById(id);
+    }
+    
+}

@@ -1,0 +1,9 @@
+spring.datasource.url=jdbc:postgresql://localhost:8083/mini_tms
+spring.datasource.username=postgres
+spring.datasource.password=0826
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.datasource.driver-class-name=org.postgresql.Driver
+
+server.port=9091

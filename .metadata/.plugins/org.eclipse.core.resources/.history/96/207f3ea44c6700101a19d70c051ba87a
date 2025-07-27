@@ -1,0 +1,18 @@
+package mini_tms;
+
+import jakarta.persistence.*;
+
+@Entity
+public class Utilisateur {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nom;
+    private String email;
+    private String motDePasse;
+    private String role; // Exemple : "ADMIN", "GESTIONNAIRE"
+
+    // Getters et setters
+}
