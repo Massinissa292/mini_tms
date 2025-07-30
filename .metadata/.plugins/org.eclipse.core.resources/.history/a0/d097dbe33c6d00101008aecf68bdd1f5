@@ -1,0 +1,29 @@
+package mini_tms.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
+
+import mini_tms.model.Conducteur;
+import mini_tms.service.ConducteurService;
+
+@RestController
+@RequestMapping("/api/conducteurs")
+public class ConducteurController {
+
+    private final ConducteurService service;
+
+    public ConducteurController(ConducteurService service) {
+        this.service = service;
+    }
+
+    @GetMapping
+    public List<Conducteur> getAllConducteurs() {
+        return service.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Conducteur getConducteurById(@PathVariable Long id) {
+        return service.getConducteurById(id);
+    }
+}

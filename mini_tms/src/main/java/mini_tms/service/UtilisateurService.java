@@ -32,7 +32,7 @@ public class UtilisateurService {
         return utilisateurRepository.findById(id)
             .map(utilisateur -> {
                 utilisateur.setNom(updatedUtilisateur.getNom());
-                
+                utilisateur.setMotDePasse(updatedUtilisateur.getMotDePasse());
                 utilisateur.setEmail(updatedUtilisateur.getEmail());
                 return utilisateurRepository.save(utilisateur);
             })

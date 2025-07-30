@@ -1,0 +1,46 @@
+package mini_tms.controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import mini_tms.model.Conducteur;
+import mini_tms.service.ConducteurService;
+
+@RestController
+@RequestMapping("/api/conducteurs")
+public class ConducteurController {
+
+    private final ConducteurService service;
+
+    public ConducteurController(ConducteurService service) {
+        this.service = service;
+    }
+
+    @GetMapping
+    public ResponseEntity<?> getAllConducteurs() {
+        List<Conducteur> conducteurs = service.getAll();
+        if (conducteurs.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.OK)
+                    .body(Map.of("message", "Aucun conducteur trouvé dans la base de données."));
+        } else {
+            return ResponseEntity.ok(conducteurs);
+        }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getConducteurById(@PathVariable Long id) {
+        try {
+            Conducteur conducteur = service.getConducteurbyId(id);
+            return ResponseEntity.ok(conducteur);
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("message", e.getMessage()));
+        }
+    }}
+
+
+

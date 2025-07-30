@@ -1,0 +1,31 @@
+package mini_tms.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import mini_tms.model.Conducteur;
+import mini_tms.repository.ConducteurRepository;
+
+@Service
+public class ConducteurService {
+    private final ConducteurRepository repository;
+
+    public ConducteurService(ConducteurRepository repository) {
+        this.repository = repository;
+    }
+
+    public List<Conducteur> getAll() {
+        List<Conducteur> conducteurs = repository.findAll();
+        if (conducteurs.isEmpty()) {
+            throw new RuntimeException("Aucun conducteur trouvé dans la base de données.");
+        }
+        return conducteurs;
+    }
+
+    public Conducteur getConducteurById(long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Conducteur avec l'ID " + id + " non trouvé."));
+    }
+}
