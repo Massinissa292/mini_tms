@@ -22,5 +22,4 @@ public class ConducteurService {
     	return repository.getById(id);
     }
     
-    
 }
