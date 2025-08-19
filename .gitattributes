@@ -1,0 +1,3 @@
+# Ignorer CSS et HTML dans les statistiques GitHub
+*.css linguist-detectable=false
+*.html linguist-detectable=false
