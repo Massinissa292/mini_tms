@@ -1,6 +1,6 @@
 package mini_tms.controller;
 
-import mini_tms.model.Conducteur;
+
 import mini_tms.model.Trajet;
 import mini_tms.service.TrajetService;
 import org.springframework.http.HttpStatus;
@@ -11,9 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/trajets")
-@CrossOrigin(origins = "*") // utile pour autoriser React à appeler l'API
+
 public class TrajetController {
 
     private final TrajetService trajetService;

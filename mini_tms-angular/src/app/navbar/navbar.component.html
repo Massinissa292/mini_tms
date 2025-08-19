@@ -22,7 +22,15 @@
           </ul>
         </li>
       </ul>
-      <li><a routerLink="/vehicules">Vehicule</a></li>
+     <ul class="menu">
+    <li>
+      <a href="#" (click)=" toggleVehicule($event)">vehicule</a>
+      <ul class="dropdown-content" *ngIf="menuVehiculeOpen">
+        <li><a routerLink="/vehicules">Liste des vehicule</a></li>
+        <li><a routerLink="/AjouterVehicule">Ajouter un vehicule</a></li>
+      </ul>
+    </li>
+  </ul>
 
 <ul class="menu">
     <li>

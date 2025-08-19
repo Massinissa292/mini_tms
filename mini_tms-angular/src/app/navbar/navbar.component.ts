@@ -10,17 +10,26 @@ import { ConducteurService } from '../Conducteur/conducteur.service';
 export class NavbarComponent {
     menuTrajetOpen = false;
     menuConducteurOpen = false;
+    menuVehiculeOpen=false;
     
     toggleTrajet(event: Event) {
       event.preventDefault();
       this.menuTrajetOpen = !this.menuTrajetOpen;
       this.menuConducteurOpen = false; // ferme l'autre
+      this.menuVehiculeOpen=false;
     }
     
     toggleConducteur(event: Event) {
       event.preventDefault();
       this.menuConducteurOpen = !this.menuConducteurOpen;
       this.menuTrajetOpen = false; // ferme l'autre
+      this.menuVehiculeOpen=false;
+    }
+    toggleVehicule(event:Event){
+      event.preventDefault();
+      this.menuConducteurOpen=false;
+      this.menuTrajetOpen=false;
+      this.menuVehiculeOpen=!this.menuVehiculeOpen;
     }
   searchId!: number;
   conducteurTrouve: any = null; // pour stocker le résultat

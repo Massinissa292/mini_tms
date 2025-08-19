@@ -16,6 +16,7 @@ import { AcceuilComponent } from './Acceuil/Acceuil.component';
 import { AjouterTrajetComponent } from './Trajet/ajout-Trajet/ajout-Trajet.component';
 import { VehiculeService } from './Vehicule/vehicule.service';
 import { VehiculeListComponent } from './Vehicule/vehicule-list/vehicule-list.component';
+import { AjouterVehiculeComponent } from './Vehicule/ajout-vehicule/ajout-vehicule.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { VehiculeListComponent } from './Vehicule/vehicule-list/vehicule-list.co
     TrajetListComponent,
     AcceuilComponent,
     AjouterTrajetComponent,
-    VehiculeListComponent
+    VehiculeListComponent,
+    AjouterVehiculeComponent
     
 
   

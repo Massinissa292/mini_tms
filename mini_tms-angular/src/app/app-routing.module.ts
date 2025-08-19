@@ -7,6 +7,7 @@ import { TrajetListComponent } from './Trajet/Trajet-list/Trajet-list.component'
 import { AcceuilComponent } from './Acceuil/Acceuil.component';
 import { AjouterTrajetComponent } from './Trajet/ajout-Trajet/ajout-Trajet.component';
 import { VehiculeListComponent } from './Vehicule/vehicule-list/vehicule-list.component';
+import { AjouterVehiculeComponent } from './Vehicule/ajout-vehicule/ajout-vehicule.component';
 
 const routes: Routes = [
   { path: 'conducteurs', component: ConducteurListComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'trajets', component: TrajetListComponent },
    { path: 'vehicules', component: VehiculeListComponent },
   { path: 'acceuil', component: AcceuilComponent },
-  { path: 'AjouterTrajet', component: AjouterTrajetComponent }, // ⚠️ doit correspondre EXACTEMENT à tes liens
+  { path: 'AjouterTrajet', component: AjouterTrajetComponent },
+  { path: 'AjouterVehicule', component: AjouterVehiculeComponent }, // ⚠️ doit correspondre EXACTEMENT à tes liens
   { path: '**', redirectTo: 'acceuil' },
   
 

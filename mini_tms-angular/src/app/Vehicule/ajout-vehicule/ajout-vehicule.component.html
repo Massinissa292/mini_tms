@@ -1,0 +1,62 @@
+<form #vehiculeForm="ngForm" (ngSubmit)="onSubmit(vehiculeForm)">
+<div>
+    <label for="nom">matricule :</label><br />
+    <input
+      type="text"
+      id="nom"
+      name="nom"
+      [(ngModel)]="vehicule.matricule"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="prenom">modele :</label><br />
+    <input
+      type="text"
+      id="prenom"
+      name="prenom"
+      [(ngModel)]="vehicule.modele"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="telephone"> type :</label><br />
+    <input
+      type="tel"
+      id="telephone"
+      name="telephone"
+      [(ngModel)]="vehicule.type"
+     
+      required
+    />
+  </div>
+
+  <div>
+    <label for="numeroPermis">capacite :</label><br />
+    <input
+      type="text"
+      id="numeroPermis"
+      name="numeroPermis"
+      [(ngModel)]="vehicule.capacite"
+      required
+    />
+  </div>
+    <div>
+    <label for="numeroPermis"> statut:</label><br />
+    <input
+      type="text"
+      id="numeroPermis"
+      name="numeroPermis"
+      [(ngModel)]="vehicule.statut"
+      required
+    />
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="vehiculeForm.invalid">
+      Créer  vehicule
+    </button>
+  </div>
+</form>

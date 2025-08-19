@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.*;
 import mini_tms.model.Conducteur;
 import mini_tms.service.ConducteurService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
+
 @RequestMapping("/api/conducteurs")
 public class ConducteurController {
 
@@ -40,7 +42,23 @@ public class ConducteurController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(Map.of("message", e.getMessage()));
         }
-    }}
+    }
+    
+    @PostMapping
+    public ResponseEntity<Conducteur> createConducteur(@RequestBody Conducteur conducteur) {
+        Conducteur savedConducteur = service.createConducteur(conducteur);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedConducteur);
+    }
+
+
+
+
+
+
+
+
+
+}
 
 
 

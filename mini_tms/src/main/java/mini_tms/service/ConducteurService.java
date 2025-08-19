@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import mini_tms.model.Conducteur;
+import mini_tms.model.Trajet;
 import mini_tms.repository.ConducteurRepository;
 
 @Service
@@ -21,6 +22,8 @@ public class ConducteurService {
     public Conducteur getConducteurbyId(long id) {
     	return repository.getById(id);
     }
-    
-    
+    public  Conducteur createConducteur(Conducteur Conducteur) {
+        return repository.save(Conducteur);
+    }
+
 }

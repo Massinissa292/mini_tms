@@ -5,6 +5,8 @@ package mini_tms.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Trajet {
 
@@ -32,11 +34,11 @@ public class Trajet {
 		this.lieuArrivee = lieuArrivee;
 	}
 
-	public LocalDateTime getDateHeure() {
+	public String getDateHeure() {
 		return dateHeure;
 	}
 
-	public void setDateHeure(LocalDateTime dateHeure) {
+	public void setDateHeure(String dateHeure) {
 		this.dateHeure = dateHeure;
 	}
 
@@ -70,8 +72,8 @@ public class Trajet {
 
     private String lieuDepart;
     private String lieuArrivee;
-    private LocalDateTime dateHeure;
-
+    
+    private String dateHeure;
     private String statut; 
 
     @ManyToOne
