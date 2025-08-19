@@ -1,0 +1,53 @@
+<form #trajetForm="ngForm" (ngSubmit)="onSubmit(trajetForm)">
+<div>
+    <label for="nom">lieuDepart :</label><br />
+    <input
+      type="text"
+      id="nom"
+      name="nom"
+      [(ngModel)]="trajet.lieuDepart"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="prenom">lieuArrivee :</label><br />
+    <input
+      type="text"
+      id="prenom"
+      name="prenom"
+      [(ngModel)]="trajet.lieuArrivee"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="telephone">dateHeure :</label><br />
+    <input
+      type="tel"
+      id="telephone"
+      name="telephone"
+      [(ngModel)]="trajet.dateHeure"
+      pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}$"
+      placeholder="Ex: 16/08/2025"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="numeroPermis">statut :</label><br />
+    <input
+      type="text"
+      id="numeroPermis"
+      name="numeroPermis"
+      [(ngModel)]="trajet.statut"
+      required
+    />
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="trajetForm.invalid">
+      Créer Conducteur
+    </button>
+  </div>
+</form>

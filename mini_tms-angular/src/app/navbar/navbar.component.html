@@ -1,0 +1,53 @@
+<nav class="navbar">
+    <div class="logo"><img src="assets/logo.png" class="logo2" alt="Logo" width="150" /> <span class="navbar-text"
+      style="font-family:italic;">Achly</span></div>
+    <ul class="nav-links">
+        <form (submit)="searchById(); $event.preventDefault()" class="search-form">
+            <input
+              type="number"
+              placeholder="ID Conducteur"
+              [(ngModel)]="searchId"
+              name="searchId"
+              required
+            />
+            <button type="submit">🔍</button>
+          </form>
+      <li><a routerLink="/Accueil">Accueil</a></li>
+      <ul class="menu">
+        <li>
+          <a href="#" (click)="toggleConducteur($event)">Conducteur</a>
+          <ul class="dropdown-content" *ngIf="menuConducteurOpen">
+            <li><a routerLink="/conducteurs">Liste de nos conducteurs</a></li>
+            <li><a routerLink="/Ajouter">Ajouter un Conducteur</a></li>
+          </ul>
+        </li>
+      </ul>
+      <li><a routerLink="/vehicules">Vehicule</a></li>
+
+<ul class="menu">
+    <li>
+      <a href="#" (click)=" toggleTrajet($event)">Trajet</a>
+      <ul class="dropdown-content" *ngIf="menuTrajetOpen">
+        <li><a routerLink="/trajets">Liste des trajets</a></li>
+        <li><a routerLink="/AjouterTrajet">Ajouter un trajet</a></li>
+      </ul>
+    </li>
+  </ul>
+  
+    </ul>
+  </nav>
+
+  <div class="conducteur-card" *ngIf="conducteurTrouve as c; else notFound">
+    <h3>Conducteur trouvé</h3>
+    <p><strong>ID :</strong> {{ c.id }}</p>
+    <p><strong>Nom :</strong> {{ c.nom }}</p>
+    <p><strong>Prénom :</strong> {{ c.prenom }}</p>
+    <p><strong>Téléphone :</strong> {{ c.telephone }}</p>
+    <p><strong>Numéro permis :</strong> {{ c.numeroPermis }}</p>
+  </div>
+  
+  <ng-template #notFound>
+    <p *ngIf="searchId">Aucun conducteur trouvé.</p>
+  </ng-template>
+  
+  <router-outlet></router-outlet>
