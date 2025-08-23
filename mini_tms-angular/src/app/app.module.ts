@@ -17,6 +17,8 @@ import { AjouterTrajetComponent } from './Trajet/ajout-Trajet/ajout-Trajet.compo
 import { VehiculeService } from './Vehicule/vehicule.service';
 import { VehiculeListComponent } from './Vehicule/vehicule-list/vehicule-list.component';
 import { AjouterVehiculeComponent } from './Vehicule/ajout-vehicule/ajout-vehicule.component';
+import { AjouterUtilisateurComponent } from './Utilisateur/ajout-utilisateur/ajout-utilisateur.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AjouterVehiculeComponent } from './Vehicule/ajout-vehicule/ajout-vehicu
     AcceuilComponent,
     AjouterTrajetComponent,
     VehiculeListComponent,
-    AjouterVehiculeComponent
+    AjouterVehiculeComponent,
+    AjouterUtilisateurComponent,
+    LoginComponent
     
 
   

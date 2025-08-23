@@ -25,5 +25,8 @@ public class ConducteurService {
     public  Conducteur createConducteur(Conducteur Conducteur) {
         return repository.save(Conducteur);
     }
+    public void deleteConducteur(long id) {
+    	repository.deleteById(id);
+    }
 
 }

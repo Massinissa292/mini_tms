@@ -20,6 +20,10 @@ class="fr">
         <td>{{ c.prenom }}</td>
         <td>{{ c.telephone }}</td>
         <td>{{ c.numeroPermis }}</td>
+        <td>
+       <button class="btn" *ngIf="c.id" (click)="deleteConducteur(c.id)" >🗑️ Supprimer</button>
+
+      </td>
       </tr>
     </tbody>
   </table>

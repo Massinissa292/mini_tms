@@ -49,16 +49,21 @@ public class ConducteurController {
         Conducteur savedConducteur = service.createConducteur(conducteur);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedConducteur);
     }
-
-
-
-
-
-
-
-
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteConducteur(@PathVariable Long id) {
+        try {
+            service.deleteConducteur(id);
+            return ResponseEntity.noContent().build(); // 204 si ok
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("message", e.getMessage()));
+        }
+    }
 }
+
+
+
+
 
 
 

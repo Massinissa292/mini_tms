@@ -12,12 +12,26 @@ import { Conducteur } from '../conducteur.model';
 export class ConducteurListComponent implements OnInit {
   conducteurs: Conducteur[] = [];
 
-  constructor(private service: ConducteurService) {}
+  constructor(private conducteurService: ConducteurService) {}
 
+  
   ngOnInit(): void {
-    this.service.getAll().subscribe(data => {
+    this.loadConducteurs();
+  }
+
+  loadConducteurs() {
+    this.conducteurService.getAll().subscribe(data => {
       this.conducteurs = data;
-      console.log('Données reçues du backend :', this.conducteurs);
+    });
+  }
+
+  // ✅ Appeler delete
+  deleteConducteur(id: number) {
+    this.conducteurService.delete(id).subscribe(() => {
+     
+      this.loadConducteurs();
     });
   }
 }
+
+

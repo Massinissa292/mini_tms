@@ -1,0 +1,52 @@
+<form #utilisateurForm="ngForm" (ngSubmit)="onSubmit(utilisateurForm)">
+<div>
+    <label for="nom">nom :</label><br />
+    <input
+      type="text"
+      id="nom"
+      name="nom"
+      [(ngModel)]="utilisateur.nom"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="prenom">Email:</label><br />
+    <input
+      type="text"
+      id="prenom"
+      name="prenom"
+      [(ngModel)]="utilisateur.email"
+      required
+    />
+  </div>
+
+  <div>
+    <label for="telephone">mot de passe :</label><br />
+    <input
+      type="password"
+      id="telephone"
+      name="telephone"
+      [(ngModel)]="utilisateur.motDePasse"
+    
+      required
+    />
+  </div>
+
+  <div>
+    <label for="numeroPermis">role:</label><br />
+    <input
+      type="text"
+      id="numeroPermis"
+      name="numeroPermis"
+      [(ngModel)]="utilisateur.role"
+      required
+    />
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="utilisateurForm.invalid">
+      Créer Un Compte
+    </button>
+  </div>
+</form>

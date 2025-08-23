@@ -1,3 +1,8 @@
+.btn{
+  background-color: red;
+  color: rgb(247, 248, 247);
+  border-radius: 50px;
+}
 .background {
   background: url('/assets/DR.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -8,7 +13,6 @@
 .fr{
     color: beige;
 }
-
 
 
 

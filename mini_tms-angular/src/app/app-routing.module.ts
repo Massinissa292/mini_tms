@@ -8,25 +8,29 @@ import { AcceuilComponent } from './Acceuil/Acceuil.component';
 import { AjouterTrajetComponent } from './Trajet/ajout-Trajet/ajout-Trajet.component';
 import { VehiculeListComponent } from './Vehicule/vehicule-list/vehicule-list.component';
 import { AjouterVehiculeComponent } from './Vehicule/ajout-vehicule/ajout-vehicule.component';
+import { AjouterUtilisateurComponent } from './Utilisateur/ajout-utilisateur/ajout-utilisateur.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'conducteurs', component: ConducteurListComponent },
-  { path: 'Ajouter', component: AjouterConducteurComponent },
-  { path: 'trajets', component: TrajetListComponent },
-   { path: 'vehicules', component: VehiculeListComponent },
+   // 🔑 Page de login (publique)
+  { path: 'login', component: LoginComponent },
+
+  // 🏠 Page d'accueil (publique ou protégée selon ton choix)
   { path: 'acceuil', component: AcceuilComponent },
-  { path: 'AjouterTrajet', component: AjouterTrajetComponent },
-  { path: 'AjouterVehicule', component: AjouterVehiculeComponent }, // ⚠️ doit correspondre EXACTEMENT à tes liens
-  { path: '**', redirectTo: 'acceuil' },
-  
 
-  
+  // 🚫 Routes protégées par le guard
+  { path: 'conducteurs', component: ConducteurListComponent, canActivate: [AuthGuard] },
+  { path: 'Ajouter', component: AjouterConducteurComponent, canActivate: [AuthGuard] },
+  { path: 'trajets', component: TrajetListComponent, canActivate: [AuthGuard] },
+  { path: 'AjouterTrajet', component: AjouterTrajetComponent, canActivate: [AuthGuard] },
+  { path: 'vehicules', component: VehiculeListComponent, canActivate: [AuthGuard] },
+  { path: 'AjouterVehicule', component: AjouterVehiculeComponent, canActivate: [AuthGuard] },
+  { path: 'AjouterUtilisateur', component: AjouterUtilisateurComponent, canActivate: [AuthGuard] },
 
-
-  { path: 'conducteurs', redirectTo: 'conducteurs', pathMatch: 'full' },
-
-  { path: 'Trajet', redirectTo: 'trajets', pathMatch: 'full' },
-  { path: '', redirectTo: 'Acceuil', pathMatch: 'full' }
+  // 🔄 Redirections
+  { path: '', redirectTo: 'acceuil', pathMatch: 'full' },
+  { path: '**', redirectTo: 'acceuil' }
 
 ];
 
